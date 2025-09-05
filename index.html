@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Web Page</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav>
-      <h2 class="logo">My Interactive Page</h2>
-      <button id="darkModeToggle">🌙 Dark Mode</button>
-    </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h2 class="logo">My Interactive Page</h2>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+  </nav>
 
-    <main>
-      <h2>Welcome to my Interactive Website</h2>
-      <p>
-        Click below to Register or Login. You can also switch to Dark/Light mode
-        anytime.
-      </p>
-      <div class="btns">
-        <button id="showRegister">Register</button>
-        <button id="showLogin">Login</button>
-      </div>
-    </main>
-
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
-
-        <form id="registerForm" class="form hidden">
-          <h3>Register</h3>
-          <label>Name:</label>
-          <input type="text" id="regName" required />
-          <small class="error"></small>
-
-          <label>Email:</label>
-          <input type="email" id="regEmail" required />
-          <small class="error"></small>
-
-          <label>Password:</label>
-          <input type="password" id="regPassword" required />
-          <small class="error"></small>
-
-          <button type="submit">Register</button>
-        </form>
-
-        <form id="loginForm" class="form hidden">
-          <h3>Login</h3>
-          <label>Email:</label>
-          <input type="email" id="loginEmail" required />
-          <small class="error"></small>
-
-          <label>Password:</label>
-          <input type="password" id="loginPassword" required />
-          <small class="error"></small>
-
-          <button type="submit">Login</button>
-        </form>
-      </div>
+  <!-- Main content -->
+  <main>
+    <h2>Welcome to my Interactive Website</h2>
+    <p>Click below to Register or Login. You can also switch to Dark/Light mode anytime.</p>
+    <div class="btns">
+      <button id="showRegister">Register</button>
+      <button id="showLogin">Login</button>
     </div>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <!-- Forms -->
+      <form id="registerForm" class="form hidden">
+        <h3>Register</h3>
+        <label>Name:</label>
+        <input type="text" id="regName" required>
+        <small class="error"></small>
+
+        <label>Email:</label>
+        <input type="email" id="regEmail" required>
+        <small class="error"></small>
+
+        <label>Password:</label>
+        <input type="password" id="regPassword" required>
+        <small class="error"></small>
+
+        <button type="submit">Register</button>
+      </form>
+
+      <form id="loginForm" class="form hidden">
+        <h3>Login</h3>
+        <label>Email:</label>
+        <input type="email" id="loginEmail" required>
+        <small class="error"></small>
+
+        <label>Password:</label>
+        <input type="password" id="loginPassword" required>
+        <small class="error"></small>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

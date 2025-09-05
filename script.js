@@ -1,3 +1,4 @@
+// Elements
 const darkToggle = document.getElementById("darkModeToggle");
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("closeModal");
@@ -6,31 +7,40 @@ const loginForm = document.getElementById("loginForm");
 const showRegister = document.getElementById("showRegister");
 const showLogin = document.getElementById("showLogin");
 
+// Dark mode toggle
 darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
 
+// Show Register form in modal
 showRegister.addEventListener("click", () => {
   modal.style.display = "flex";
   registerForm.classList.remove("hidden");
   loginForm.classList.add("hidden");
 });
 
+// Show Login form in modal
 showLogin.addEventListener("click", () => {
   modal.style.display = "flex";
   loginForm.classList.remove("hidden");
   registerForm.classList.add("hidden");
 });
 
+// Close modal
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
+// Close modal if clicked outside
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
   }
 });
+
+// ------------------ Form Validation ------------------ //
+
+// Register form validation
 registerForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let valid = true;
@@ -39,9 +49,8 @@ registerForm.addEventListener("submit", (e) => {
   const email = document.getElementById("regEmail");
   const password = document.getElementById("regPassword");
 
-  registerForm
-    .querySelectorAll(".error")
-    .forEach((el) => (el.textContent = ""));
+  // Reset errors
+  registerForm.querySelectorAll(".error").forEach(el => el.textContent = "");
 
   if (name.value.length < 3) {
     name.nextElementSibling.textContent = "Name must be at least 3 characters";
@@ -55,8 +64,7 @@ registerForm.addEventListener("submit", (e) => {
   }
 
   if (password.value.length < 8 || !/\d/.test(password.value)) {
-    password.nextElementSibling.textContent =
-      "Password must be 8+ chars and contain a number";
+    password.nextElementSibling.textContent = "Password must be 8+ chars and contain a number";
     valid = false;
   }
 
@@ -66,6 +74,7 @@ registerForm.addEventListener("submit", (e) => {
   }
 });
 
+// Login form validation
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let valid = true;
@@ -73,7 +82,7 @@ loginForm.addEventListener("submit", (e) => {
   const email = document.getElementById("loginEmail");
   const password = document.getElementById("loginPassword");
 
-  loginForm.querySelectorAll(".error").forEach((el) => (el.textContent = ""));
+  loginForm.querySelectorAll(".error").forEach(el => el.textContent = "");
 
   if (email.value.trim() === "") {
     email.nextElementSibling.textContent = "Email is required";
